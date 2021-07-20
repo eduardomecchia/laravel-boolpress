@@ -17,4 +17,6 @@ Route::get('/', "PageController@index");
 
 Auth::routes();
 
+Route::resource("posts", PostController::class);
+
 Route::get('/home', 'HomeController@index')->name('home');
