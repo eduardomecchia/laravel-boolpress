@@ -15,7 +15,10 @@
     <body>
         <!-- Website header -->
         <header>
-
+            <nav>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </nav>
         </header>
 
         <!-- Page content -->
@@ -25,7 +28,7 @@
 
         <!-- Website footer -->
         <footer>
-
+            
         </footer>
     </body>
 </html>
