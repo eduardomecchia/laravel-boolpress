@@ -24,10 +24,7 @@
                     <a href="/posts">Posts</a>
                 </div>
 
-                <div class="auth">
-                    <a class="mr-3" href="/login">Login</a>
-                    <a href="/register">Register</a>
-                </div>
+                @yield("auth")
             </nav>
         </header>
 
