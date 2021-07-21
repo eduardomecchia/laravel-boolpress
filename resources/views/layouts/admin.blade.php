@@ -15,7 +15,7 @@
         <link rel="shortcut icon" href="{{ asset("favicon.ico") }}" type="image/x-icon">
     </head>
 
-    <body>
+    <body class="bg-lavender">
         <!-- Website header -->
         <header id="site-header" class="p-4">
             <nav class="d-flex justify-content-between">
