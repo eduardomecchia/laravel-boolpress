@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section("auth")
-<div class="username">{{ Auth::user()->name }}</div>
-@endsection
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
