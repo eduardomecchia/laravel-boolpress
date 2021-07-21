@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view("admin.index");
+        return view("admin.posts.index");
     }
 
     /**
@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("admin.create");
+        return view("admin.posts.create");
     }
 
     /**
@@ -47,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view("admin.show");
+        return view("admin.posts.show");
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view("admin.edit");
+        return view("admin.posts.edit");
     }
 
     /**
@@ -81,6 +81,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {  
-        return redirect()->route("admin.index");
+        return redirect()->route("admin.posts.index");
     }
 }
