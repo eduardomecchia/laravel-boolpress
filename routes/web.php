@@ -18,7 +18,7 @@ Route::get('/', "PageController@index");
 // Authentication routes
 Auth::routes();
 
-// User routes
+// Guest routes
 Route::get('posts', "PostController@index")->name("posts.index");
 Route::get('posts/{post}', "PostController@show")->name("posts.show");
 
