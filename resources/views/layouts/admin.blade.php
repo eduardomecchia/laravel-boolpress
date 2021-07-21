@@ -24,7 +24,15 @@
                     <a href="/admin/posts">Posts</a>
                 </div>
 
-                <a href="#" class="username">{{ Auth::user()->name }}</a>
+                <div class="auth">
+                    <a href="#" class="username mr-3">{{ Auth::user()->name }}</a>
+
+                    <form action="{{ route("logout") }}" method="POST">
+                        @csrf 
+
+                        <button class="btn btn-primary" type="submit">Logout</button>
+                    </form>
+                </div>
             </nav>
         </header>
 

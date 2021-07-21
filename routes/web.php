@@ -24,6 +24,6 @@ Route::get('posts/{post}', "PostController@show")->name("posts.show");
 
 // Admin routes
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('dashboard');
     route::resource('posts', PostController::class);
 });

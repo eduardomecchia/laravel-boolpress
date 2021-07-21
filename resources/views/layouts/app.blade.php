@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="auth">
-                    <a class="mr-3" href="/login">Login</a>
-                    <a href="/register">Register</a>
+                    <a class="mr-3" href="{{ route("login") }}">Login</a>
+                    <a href="{{ route("register") }}">Register</a>
                 </div>
             </nav>
         </header>
