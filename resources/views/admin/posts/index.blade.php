@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="container">
-        <h1>Admin posts</h1>
+        <h1 class="font-weight-bold">Posts Control Center</h1>
 
         <a href="{{ route("admin.posts.create") }}" class="btn btn-primary my-4">Create post</a>
     

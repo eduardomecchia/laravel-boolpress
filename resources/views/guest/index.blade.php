@@ -2,6 +2,6 @@
 
 @section("content")
 <div class="container">
-    <h1>Boolpress index page</h1> 
+    <h1 class="font-weight-bold">Welcome to Boolpress.</h1> 
 </div>
 @endsection
