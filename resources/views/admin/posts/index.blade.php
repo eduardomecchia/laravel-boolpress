@@ -11,7 +11,10 @@
                 <div class="post-title">{{ $post->title }}</div>
     
                 <div class="post-author">Author: {{ $post->author }}</div>
+
             </a>
+
+            <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-primary mb-5">Edit</a>
         @endforeach
     </div>
 @endsection
