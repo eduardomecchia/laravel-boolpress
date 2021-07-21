@@ -11,10 +11,18 @@
                 <div class="post-title">{{ $post->title }}</div>
     
                 <div class="post-author">Author: {{ $post->author }}</div>
-
             </a>
 
-            <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-primary mb-5">Edit</a>
+            <div class="controls d-flex align-items-center">
+                <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-primary">Edit</a>
+
+                <form action="{{ route("admin.posts.destroy", $post->id) }}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    
+                    <button type="submit" class="btn btn-danger ml-5">Delete</button>
+                </form>
+            </div>
         @endforeach
     </div>
 @endsection
