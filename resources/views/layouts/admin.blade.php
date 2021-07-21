@@ -24,7 +24,7 @@
                     <a href="/admin/posts">Posts</a>
                 </div>
 
-                <div class="auth">
+                <div class="auth d-flex align-items-center">
                     <a href="#" class="username mr-3">{{ Auth::user()->name }}</a>
 
                     <form action="{{ route("logout") }}" method="POST">
