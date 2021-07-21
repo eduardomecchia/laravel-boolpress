@@ -20,8 +20,8 @@
         <header id="site-header" class="p-4">
             <nav class="d-flex justify-content-between">
                 <div class="links">
-                    <a class="mr-3" href="/">Home</a>
-                    <a href="/posts">Posts</a>
+                    <a class="mr-3" href="/admin">Dashboard</a>
+                    <a href="/admin/posts">Posts</a>
                 </div>
 
                 <a href="#" class="username">{{ Auth::user()->name }}</a>
