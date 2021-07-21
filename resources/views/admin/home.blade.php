@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section("auth")
+<div class="username">{{ Auth::user()->name }}</div>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
