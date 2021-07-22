@@ -38,13 +38,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $newPost = new Post();
-
-        $newPost->title = $request->title;
-        $newPost->body = $request->body;
-        $newPost->author = $request->author;
-
-        $newPost->save();
+        $validatedData = $request->validate([
+            "title" => "required | min:5 | max:255",
+            "body" => "required | max:255",
+            "author" => "required"
+        ]);
+        
+        Post::create($validatedData);
 
         return redirect()->route("admin.posts.index");
     }
