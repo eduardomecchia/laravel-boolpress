@@ -80,11 +80,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->author = $request->author;
-
-        $post->save();
+        $validatedData = $request->validate([
+            "title" => "required | min:5 | max:255",
+            "body" => "required | max:255",
+            "author" => "required"
+        ]);
+        
+        $post->update($validatedData);
 
         return redirect()->route("admin.posts.index");
     }

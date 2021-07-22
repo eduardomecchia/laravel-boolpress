@@ -4,6 +4,16 @@
 <div class="container">
     <h1>Edit a post</h1>
 
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul class="m-0">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form class="d-flex flex-column" action="{{ route("admin.posts.update", $post->id) }}" method="POST">
         @csrf
         @method("PUT")
