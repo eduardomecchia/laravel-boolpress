@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form class="d-flex flex-column" action="{{ route("admin.posts.update", $post->id) }}" method="POST">
+    <form class="d-flex flex-column" action="{{ route("admin.posts.update", $post->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("PUT")
     
