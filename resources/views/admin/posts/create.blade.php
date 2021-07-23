@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form class="d-flex flex-column" action="{{ route("admin.posts.store") }}" method="POST">
+    <form class="d-flex flex-column" action="{{ route("admin.posts.store") }}" method="POST" enctype="multipart/form-data">
         @csrf
     
         <div class="post-title d-flex flex-column mb-4">

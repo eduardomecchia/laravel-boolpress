@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
@@ -42,9 +43,16 @@ class PostController extends Controller
             "title" => "required | min:5 | max:255",
             "body" => "required | max:255",
             "author" => "required",
-            "image" => "nullable"
+            "image" => "nullable | image | max:2048"
         ]);
         
+        // ddd($validatedData);
+
+        $img_path = Storage::put("uploads", $validatedData["image"]);
+        $validatedData["image"] = $img_path;
+
+        // ddd($validatedData);
+
         Post::create($validatedData);
 
         return redirect()->route("admin.posts.index");
@@ -85,9 +93,12 @@ class PostController extends Controller
             "title" => "required | min:5 | max:255",
             "body" => "required | max:255",
             "author" => "required",
-            "image" => "nullable"
+            "image" => "nullable | image | max:2048"
         ]);
         
+        $img_path = Storage::put("uploads", $validatedData["image"]);
+        $validatedData["image"] = $img_path;
+
         $post->update($validatedData);
 
         return redirect()->route("admin.posts.index");
