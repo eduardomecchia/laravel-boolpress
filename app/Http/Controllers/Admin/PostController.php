@@ -45,13 +45,9 @@ class PostController extends Controller
             "author" => "required",
             "image" => "nullable | image | max:2048"
         ]);
-        
-        // ddd($validatedData);
 
         $img_path = Storage::put("uploads", $validatedData["image"]);
         $validatedData["image"] = $img_path;
-
-        // ddd($validatedData);
 
         Post::create($validatedData);
 
