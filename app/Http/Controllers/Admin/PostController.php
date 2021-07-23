@@ -46,8 +46,10 @@ class PostController extends Controller
             "image" => "nullable | image | max:2048"
         ]);
 
-        $img_path = Storage::put("uploads", $validatedData["image"]);
-        $validatedData["image"] = $img_path;
+        if(array_key_exists("image", $validatedData)) {
+            $img_path = Storage::put("uploads", $validatedData["image"]);
+            $validatedData["image"] = $img_path;
+        }
 
         Post::create($validatedData);
 
@@ -92,8 +94,10 @@ class PostController extends Controller
             "image" => "nullable | image | max:2048"
         ]);
         
-        $img_path = Storage::put("uploads", $validatedData["image"]);
-        $validatedData["image"] = $img_path;
+        if(array_key_exists("image", $validatedData)) {
+            $img_path = Storage::put("uploads", $validatedData["image"]);
+            $validatedData["image"] = $img_path;
+        }
 
         $post->update($validatedData);
 
