@@ -10946,3 +10946,7 @@ a.text-dark:focus {
   background-color: lavender;
 }
 
+.post-image {
+  max-width: 500px;
+}
+
