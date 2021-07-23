@@ -25,18 +25,16 @@
 
         <div class="post-image d-flex flex-column mb-4">
             <label class="mr-3" for="image">Image</label>
-            <input type="text" name="image" id="image" value="{{ $post->image }}">
+            <input type="file" name="image" id="image">
         </div>
 
         <div class="post-body d-flex flex-column mb-4">
             <label class="mr-3" for="title">Body</label>
-
             <input type="text" name="body" id="body" value="{{ $post->body }}">
         </div>
 
         <div class="post-author d-flex flex-column mb-4">
             <label class="mr-3" for="title">Author</label>
-
             <input type="text" name="author" id="author" value="{{ $post->author }}">
         </div>
 

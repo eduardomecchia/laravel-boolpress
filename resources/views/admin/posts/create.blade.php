@@ -19,24 +19,21 @@
     
         <div class="post-title d-flex flex-column mb-4">
             <label class="mr-3" for="title">Title</label>
-
             <input type="text" name="title" id="title" value="{{ old("title") }}">
         </div>
 
         <div class="post-image d-flex flex-column mb-4">
             <label class="mr-3" for="image">Image</label>
-            <input type="text" name="image" id="image" value="{{ old("image") }}">
+            <input type="file" name="image" id="image">
         </div>
 
         <div class="post-body d-flex flex-column mb-4">
             <label class="mr-3" for="title">Body</label>
-
             <input type="text" name="body" id="body" value="{{ old("body") }}">
         </div>
 
         <div class="post-author d-flex flex-column mb-4">
             <label class="mr-3" for="title">Author</label>
-
             <input type="text" name="author" id="author" value="{{ old("author") }}">
         </div>
 
