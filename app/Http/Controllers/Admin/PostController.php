@@ -41,7 +41,8 @@ class PostController extends Controller
         $validatedData = $request->validate([
             "title" => "required | min:5 | max:255",
             "body" => "required | max:255",
-            "author" => "required"
+            "author" => "required",
+            "image" => "nullable"
         ]);
         
         Post::create($validatedData);
@@ -83,7 +84,8 @@ class PostController extends Controller
         $validatedData = $request->validate([
             "title" => "required | min:5 | max:255",
             "body" => "required | max:255",
-            "author" => "required"
+            "author" => "required",
+            "image" => "nullable"
         ]);
         
         $post->update($validatedData);

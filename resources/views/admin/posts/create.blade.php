@@ -23,6 +23,11 @@
             <input type="text" name="title" id="title" value="{{ old("title") }}">
         </div>
 
+        <div class="post-image d-flex flex-column mb-4">
+            <label class="mr-3" for="image">Image</label>
+            <input type="text" name="image" id="image" value="{{ old("image") }}">
+        </div>
+
         <div class="post-body d-flex flex-column mb-4">
             <label class="mr-3" for="title">Body</label>
 
