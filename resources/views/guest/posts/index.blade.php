@@ -15,7 +15,7 @@
                         <div class="post-author">{{ $post->author }}</div>
 
                         <div class="thumbnail my-4">
-                            <img width="200" height="100" src="{{ $post->image }}" alt="">
+                            <img width="200" height="100" src="{{ asset("storage/" . $post->image) }}" alt="">
                         </div>
                     </div>
 

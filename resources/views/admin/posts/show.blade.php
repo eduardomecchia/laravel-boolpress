@@ -5,7 +5,7 @@
         <h1 class="font-weight-bold">{{ $post->title }}</h1>
         
         <div class="post-image my-4">
-            <img class="img-fluid" src="{{ $post->image }}" alt="">
+            <img class="img-fluid" src="{{ asset("storage/" . $post->image) }}" alt="">
         </div>
 
         <div>{{ $post->body }}</div>
