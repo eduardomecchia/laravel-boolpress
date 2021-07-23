@@ -4,6 +4,10 @@
     <div class="container">
         <h1 class="font-weight-bold">{{ $post->title }}</h1>
         
+        <div class="post-image my-4">
+            <img src="{{ $post->image }}" alt="">
+        </div>
+
         <div>{{ $post->body }}</div>
         
         <div class="author d-flex mt-5">

@@ -13,6 +13,10 @@
             
                         <div class="label font-weight-bold mt-3">Author:</div>
                         <div class="post-author">{{ $post->author }}</div>
+
+                        <div class="thumbnail my-4">
+                            <img width="200" height="100" src="{{ $post->image }}" alt="">
+                        </div>
                     </div>
 
                     <div class="controls d-flex align-items-center">
