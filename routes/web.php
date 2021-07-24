@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "PageController@index");
-
 // Authentication routes
 Auth::routes();
 
 // Guest routes
+Route::get('/', "PageController@index");
+Route::get('contact', "PageController@contact");
 Route::get('posts', "PostController@index")->name("posts.index");
 Route::get('posts/{post}', "PostController@show")->name("posts.show");
 
