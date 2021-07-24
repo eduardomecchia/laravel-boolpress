@@ -11,7 +11,7 @@ class ContactController extends Controller
         return view("guest.contact");
     }
 
-    public function sendContactForm(Request $request)
+    public function storeAndSend(Request $request)
     {
         $validatedData = $request->validate([
             "full_name" => "required",

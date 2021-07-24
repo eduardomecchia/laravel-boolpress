@@ -19,7 +19,8 @@ Auth::routes();
 // Guest routes
 Route::get('/', "PageController@index");
 
-Route::get('contact', "ContactController@form");
+Route::get('contact', "ContactController@form")->name("contact");
+Route::post('contact', 'ContactController@storeAndSend')->name('contact.send');
 
 Route::get('posts', "PostController@index")->name("posts.index");
 Route::get('posts/{post}', "PostController@show")->name("posts.show");
