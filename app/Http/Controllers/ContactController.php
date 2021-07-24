@@ -18,5 +18,7 @@ class ContactController extends Controller
             "email" => "required | email",
             "message" => "required"
         ]);
+
+        ddd($validatedData);
     }
 }
