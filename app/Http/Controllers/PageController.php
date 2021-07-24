@@ -10,4 +10,18 @@ class PageController extends Controller
     {
         return view("guest.index");
     }
+
+    public function contact()
+    {
+        return view("guest.contact");
+    }
+
+    public function sendContactForm(Request $request)
+    {
+        $validatedData = $request->validate([
+            "full_name" => "required",
+            "email" => "required | email",
+            "message" => "required"
+        ]);
+    }
 }
