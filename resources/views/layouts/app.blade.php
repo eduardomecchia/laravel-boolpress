@@ -20,8 +20,9 @@
         <header id="site-header" class="p-4">
             <nav class="d-flex justify-content-between">
                 <div class="links">
-                    <a class="mr-3" href="/">Home</a>
-                    <a href="/posts">Posts</a>
+                    <a href="/" class="mr-3">Home</a>
+                    <a href="/posts" class="mr-3">Posts</a>
+                    <a href="/contact">Contact</a>
                 </div>
 
                 <div class="auth">
