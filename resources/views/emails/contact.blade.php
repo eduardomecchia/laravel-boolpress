@@ -10,7 +10,9 @@
     <body>
         <h1>Hai ricevuto un nuovo messaggio</h1>
         <p>Messaggio da: "email"</p>
+
         <br>
+        
         <p>Messaggio: {{}}</p>
     </body>
 </html>
