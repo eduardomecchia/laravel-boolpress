@@ -28,6 +28,6 @@ class ContactController extends Controller
         // Send email
         Mail::to("eduardomecchia273@gmail.com")->send(new ContactFormMail($validatedData));
 
-        return redirect()->back()->with("message", "Thanks for your message. We'll get back to you soon");
+        return redirect()->back()->with("message", "The message has been sent correctly. We'll get back to you soon.");
     }
 }
