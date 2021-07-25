@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -21,7 +22,12 @@ class ContactController extends Controller
             "message" => "required"
         ]);
 
-        // Send mail
-        return (new ContactFormMail($validatedData))->render();
+        // View email without sending it
+        // return (new ContactFormMail($validatedData))->render();
+
+        // Send email
+        Mail::to("eduardomecchia273@gmail.com")->send(new ContactFormMail($validatedData));
+
+        return redirect()->back()->with("message", "Thanks for your message. We'll get back to you soon");
     }
 }
