@@ -8,11 +8,11 @@
     </head>
     
     <body>
-        <h1>Hai ricevuto un nuovo messaggio da {{ $data["full_name"] }}</h1>
-        <p>Messaggio da: {{ $data["email"] }}</p>
+        <h1>Hai ricevuto un nuovo messaggio da {{ $contact["full_name"] }}</h1>
+        <p>Messaggio da: {{ $contact["email"] }}</p>
 
         <br>
 
-        <p>Messaggio: {{ $data["message"] }}</p>
+        <p>Messaggio: {{ $contact["message"] }}</p>
     </body>
 </html>
