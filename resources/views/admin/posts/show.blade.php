@@ -1,5 +1,7 @@
 @extends("layouts.admin")
 
+@section("title", "Boolpress | " . $post->title)
+
 @section("content")
     <div class="container">
         <h1 class="font-weight-bold">{{ $post->title }}</h1>
