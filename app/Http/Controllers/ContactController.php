@@ -22,6 +22,6 @@ class ContactController extends Controller
         ]);
 
         // Send mail
-        return (new ContactFormMail)->render();
+        return (new ContactFormMail($validatedData))->render();
     }
 }
