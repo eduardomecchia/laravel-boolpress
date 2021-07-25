@@ -1,5 +1,7 @@
 @extends("layouts.app")
 
+@section("title", "Boolpress | Posts")
+
 @section("content")
     <div class="container">
         <h1 class="font-weight-bold">Posts</h1>

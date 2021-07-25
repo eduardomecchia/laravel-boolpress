@@ -1,5 +1,7 @@
 @extends("layouts.admin")
 
+@section("title", "Boolpress | Posts Control Center")
+
 @section("content")
     <div class="container">
         <h1 class="font-weight-bold">Posts Control Center</h1>
