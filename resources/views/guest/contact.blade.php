@@ -1,5 +1,7 @@
 @extends("layouts.app")
 
+@section("title", "Boolpress | Contact Us")
+
 @section("content")
     <div class="container">
         @include("partials.errors")
