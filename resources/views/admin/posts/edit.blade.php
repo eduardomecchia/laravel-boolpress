@@ -1,5 +1,7 @@
 @extends("layouts.admin")
 
+@section("title", "Boolpress | Edit " . $post->title)
+
 @section("content")
     <div class="container">
         <h1>Edit a post</h1>

@@ -1,5 +1,7 @@
 @extends("layouts.admin")
 
+@section("title", "Boolpress | Create post")
+
 @section("content")
     <div class="container">
         <h1>Create a post</h1>
