@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="font-weight-bold">{{ $post->title }}</h1>
 
-        <h5>Category: {{ $post->category }}</h5>
+        <h5>Category: {{ $post->category ? $post->category->name : "No category available" }}</h5>
         
         <div class="post-image my-4">
             <img class="img-fluid" src="{{ asset("storage/" . $post->image) }}" alt="">

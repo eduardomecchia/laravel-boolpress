@@ -33,7 +33,7 @@
 
             <div class="post-category d-flex flex-column mb-4">
                 <label class="mr-3" for="category_id">Category</label>
-                <select name="category_id" id="category_id" value="{{ old("category") }}">
+                <select name="category_id" id="category_id" value="{{ old("category_id") }}">
                     <option disabled selected>Select a category</option>
                     
                     @foreach($categories as $category)
