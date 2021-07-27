@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -28,7 +29,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("admin.posts.create");
+        $categories = Category::all();
+
+        return view("admin.posts.create", compact("categories"));
     }
 
     /**
@@ -43,6 +46,7 @@ class PostController extends Controller
             "title" => "required | min:5 | max:255",
             "body" => "required | max:255",
             "author" => "required",
+            "category_id" => "nullable | exists:categories,id",
             "image" => "nullable | image | max:2048"
         ]);
 
@@ -75,7 +79,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view("admin.posts.edit", compact("post"));
+        $categories = Category::all();
+
+        return view("admin.posts.edit", compact("post", "categories"));
     }
 
     /**
