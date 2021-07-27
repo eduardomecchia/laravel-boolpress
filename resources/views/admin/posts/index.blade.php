@@ -18,6 +18,9 @@
                         <div class="label font-weight-bold mt-3">Author:</div>
                         <div class="post-author">{{ $post->author }}</div>
 
+                        <div class="label font-weight-bold mt-3">Category:</div>
+                        <div class="post-category">{{ $post->category ? $post->category->name : "No category available" }}</div>
+
                         <div class="thumbnail my-4">
                             <img width="200" height="100" src="{{ asset("storage/" . $post->image) }}" alt="">
                         </div>
