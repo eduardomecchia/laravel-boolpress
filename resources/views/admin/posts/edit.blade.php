@@ -32,6 +32,17 @@
                 <input type="text" name="author" id="author" value="{{ $post->author }}">
             </div>
 
+            <div class="post-category d-flex flex-column mb-4">
+                <label class="mr-3" for="category_id">Category</label>
+                <select name="category_id" id="category_id">
+                    <option disabled selected>Select a category</option>
+                    
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ $category->id == old("category_id", $post->category_id) ? "selected" : "" }}>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-primary my-4">Edit post</button>
         </form>
     </div>
