@@ -119,7 +119,7 @@ class PostController extends Controller
         $post->update($validatedData);
         
         // Update post tags
-        $post->tags()->attach($request->tags);
+        $post->tags()->sync($request->tags);
 
         return redirect()->route("admin.posts.index");
     }
