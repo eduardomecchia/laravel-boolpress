@@ -61,7 +61,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary my-4">Edit post</button>
+            <button type="submit" class="btn btn-success my-4">Edit post</button>
         </form>
     </div>
 @endsection
