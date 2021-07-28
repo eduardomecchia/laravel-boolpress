@@ -58,6 +58,7 @@ class PostController extends Controller
             $validatedData["image"] = $img_path;
         }
 
+        // Create new post
         $post = Post::create($validatedData);
 
         // Add post tags
@@ -114,6 +115,7 @@ class PostController extends Controller
             $validatedData["image"] = $img_path;
         }
 
+        // Update post
         $post->update($validatedData);
         
         // Update post tags
