@@ -49,6 +49,18 @@
                 </select>
             </div>
 
+            <!-- Post tags -->
+            <div class="d-flex flex-column mb-4">
+                <label for="tags" class="mr-3">Tags</label>
+                <select name="tags[]" id="tags" multiple>
+                    <option value="" disabled>Select tags</option>
+
+                    @foreach($tags as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-primary my-4">Edit post</button>
         </form>
     </div>
