@@ -15,7 +15,7 @@
             <span>Tags:</span>
 
             @forelse($post->tags as $tag)
-                <span>{{ $tag->name }}</span>
+                <span>{{ $loop->last ? $tag->name : $tag->name . "," }}</span>
             @empty
                 <span>No tags yet</span>
             @endforelse
