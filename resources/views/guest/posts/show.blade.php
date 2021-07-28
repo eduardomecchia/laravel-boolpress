@@ -4,19 +4,24 @@
 
 @section("content")
     <div class="container">
+        <!-- Post title -->
         <h1 class="font-weight-bold">{{ $post->title }}</h1>
         
+        <!-- Post category -->
         <h5>Category: {{ $post->category ? $post->category->name : "No category available" }}</h5>
 
-        <div class="post-image my-4">
+        <!-- Post image -->
+        <div class="my-4">
             <img class="img-fluid" src="{{ asset("storage/" . $post->image) }}" alt="">
         </div>
 
+        <!-- Post body -->
         <div>{{ $post->body }}</div>
         
-        <div class="author d-flex mt-5">
+        <!-- Post author -->
+        <div class="d-flex mt-5">
             <div class="label font-weight-bold">Author:</div>
-            <div class="author-name ml-2">{{ $post->author }}</div>
+            <div class="ml-2">{{ $post->author }}</div>
         </div>
     </div>
 @endsection
