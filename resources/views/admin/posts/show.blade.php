@@ -9,6 +9,17 @@
 
         <!-- Post category -->
         <h5>Category: {{ $post->category ? $post->category->name : "No category available" }}</h5>
+
+        <!-- Post tags -->
+        <div>
+            <span>Tags:</span>
+
+            @forelse($post->tags as $tag)
+                <span>{{ $tag->name }}</span>
+            @empty
+                <span>No tags yet</span>
+            @endforelse
+        </div>
         
         <!-- Post image -->
         <div class="my-4">
