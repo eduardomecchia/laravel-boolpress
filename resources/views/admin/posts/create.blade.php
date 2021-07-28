@@ -54,9 +54,11 @@
                 <select name="tags[]" id="tags" multiple>
                     <option value="" disabled>Select tags</option>
 
-                    @foreach($tags as $tag)
-                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                    @endforeach
+                    @if($tags)
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach
+                    @endif
                 </select>
             </div>
 
