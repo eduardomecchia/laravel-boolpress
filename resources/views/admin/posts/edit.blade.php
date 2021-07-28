@@ -57,7 +57,7 @@
 
                     @if($tags)
                         @foreach($tags as $tag)
-                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            <option value="{{ $tag->id }}" {{ $post->tags->contains($tag) ? "selected" : "" }}>{{ $tag->name }}</option>
                         @endforeach
                     @endif
                 </select>
