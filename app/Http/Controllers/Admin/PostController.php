@@ -49,6 +49,7 @@ class PostController extends Controller
             "body" => "required | max:255",
             "author" => "required",
             "category_id" => "nullable | exists:categories,id",
+            "tags" => "nullable | exists:tags,id",
             "image" => "nullable | image | max:2048"
         ]);
 
@@ -57,7 +58,10 @@ class PostController extends Controller
             $validatedData["image"] = $img_path;
         }
 
-        Post::create($validatedData);
+        $post = Post::create($validatedData);
+
+        // Add post tags
+        $post->tags()->attach($request->tags);
 
         return redirect()->route("admin.posts.index");
     }
@@ -101,6 +105,7 @@ class PostController extends Controller
             "body" => "required | max:255",
             "author" => "required",
             "category_id" => "nullable | exists:categories,id",
+            "tags" => "nullable | exists:tags,id",
             "image" => "nullable | image | max:2048"
         ]);
         
@@ -110,6 +115,9 @@ class PostController extends Controller
         }
 
         $post->update($validatedData);
+        
+        // Update post tags
+        $post->tags()->attach($request->tags);
 
         return redirect()->route("admin.posts.index");
     }
