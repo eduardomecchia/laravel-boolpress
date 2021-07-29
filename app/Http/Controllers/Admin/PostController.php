@@ -49,7 +49,6 @@ class PostController extends Controller
             'body' => 'required | max:255',
             'author' => 'required',
             'category_id' => 'nullable | exists:categories,id',
-            'tags' => 'nullable | exists:tags,id',
             'image' => 'nullable | image | max:2048'
         ]);
 
@@ -62,7 +61,7 @@ class PostController extends Controller
         $post = Post::create($validatedData);
 
         // Add post tags
-        $post->tags()->attach($validatedData['tags']);
+        $post->tags()->attach($request->tags);
 
         return redirect()->route("admin.posts.index");
     }
