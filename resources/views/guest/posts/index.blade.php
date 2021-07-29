@@ -8,23 +8,38 @@
 
         <div class="post-container">
             @foreach($posts as $post)
+                <!-- Post -->
                 <div class="post bg-dark rounded p-4 mb-4 d-block">
                     <div class="text-white mb-3 d-flex flex-column">
-                        <div class="label font-weight-bold">Title:</div>
-                        <div class="post-title">{{ $post->title }}</div>
+                        <!-- Post title -->
+                        <div class="font-weight-bold">Title:</div>
+                        <div>{{ $post->title }}</div>
             
-                        <div class="label font-weight-bold mt-3">Author:</div>
-                        <div class="post-author">{{ $post->author }}</div>
+                        <!-- Post author -->
+                        <div class="font-weight-bold mt-3">Author:</div>
+                        <div>{{ $post->author }}</div>
 
-                        <div class="label font-weight-bold mt-3">Category:</div>
-                        <div class="post-category">{{ $post->category ? $post->category->name : "No category available" }}</div>
+                        <!-- Post category -->
+                        <div class="font-weight-bold mt-3">Category:</div>
+                        <div>{{ $post->category ? $post->category->name : "No category available" }}</div>
 
+                        <!-- Post tags -->
+                        <div class="font-weight-bold mt-3">Tags:</div>
+                        <div>
+                            @if($post->tags)
+                                @foreach($post->tags as $tag)
+                                    {{ $loop->last ? $tag->name : $tag->name . ',' }}
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <!-- Post thumbnail -->
                         <div class="thumbnail my-4">
                             <img width="200" height="100" src="{{ asset("storage/" . $post->image) }}" alt="">
                         </div>
                     </div>
 
-                    <div class="controls d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                         <a href="{{ route("posts.show", $post->id) }}" class="btn btn-success">Open</a>
                     </div>
                 </div>
