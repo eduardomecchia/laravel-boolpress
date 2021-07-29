@@ -7,7 +7,7 @@ use App\Tag;
 
 class Post extends Model
 {
-    protected $fillable = ["title", "body", "author", "image", "category_id", "tags"];
+    protected $fillable = ['title', 'body', 'author', 'image', 'category_id'];
 
     /**
      * Get the category that owns the Post

@@ -33,7 +33,7 @@ class PostController extends Controller
         $categories = Category::all();
         $tags = Tag::all();
 
-        return view("admin.posts.create", compact("categories", "tags"));
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -52,7 +52,7 @@ class PostController extends Controller
             'tags' => 'nullable | exists:tags,id',
             'image' => 'nullable | image | max:2048'
         ]);
-
+        
         if(array_key_exists("image", $validatedData)) {
             $img_path = Storage::put("uploads", $validatedData["image"]);
             $validatedData["image"] = $img_path;
@@ -89,7 +89,7 @@ class PostController extends Controller
         $categories = Category::all();
         $tags = Tag::all();
 
-        return view("admin.posts.edit", compact("post", "categories", "tags"));
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -117,7 +117,7 @@ class PostController extends Controller
 
         // Update post
         $post->update($validatedData);
-        
+
         // Update post tags
         $post->tags()->sync($request->tags);
 
