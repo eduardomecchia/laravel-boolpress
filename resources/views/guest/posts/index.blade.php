@@ -39,6 +39,7 @@
                         </div>
                     </div>
 
+                    <!-- Control buttons -->
                     <div class="d-flex align-items-center">
                         <a href="{{ route("posts.show", $post->id) }}" class="btn btn-success">Open</a>
                     </div>
