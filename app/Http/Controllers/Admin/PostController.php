@@ -45,12 +45,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            "title" => "required | min:5 | max:255",
-            "body" => "required | max:255",
-            "author" => "required",
-            "category_id" => "nullable | exists:categories,id",
-            "tags" => "nullable | exists:tags,id",
-            "image" => "nullable | image | max:2048"
+            'title' => 'required | min:5 | max:255',
+            'body' => 'required | max:255',
+            'author' => 'required',
+            'category_id' => 'nullable | exists:categories,id',
+            'tags' => 'nullable | exists:tags,id',
+            'image' => 'nullable | image | max:2048'
         ]);
 
         if(array_key_exists("image", $validatedData)) {
@@ -62,7 +62,7 @@ class PostController extends Controller
         $post = Post::create($validatedData);
 
         // Add post tags
-        $post->tags()->attach($request->tags);
+        $post->tags()->attach($validatedData['tags']);
 
         return redirect()->route("admin.posts.index");
     }
@@ -102,17 +102,17 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $validatedData = $request->validate([
-            "title" => "required | min:5 | max:255",
-            "body" => "required | max:255",
-            "author" => "required",
-            "category_id" => "nullable | exists:categories,id",
-            "tags" => "nullable | exists:tags,id",
-            "image" => "nullable | image | max:2048"
+            'title' => 'required | min:5 | max:255',
+            'body' => 'required | max:255',
+            'author' => 'required',
+            'category_id' => 'nullable | exists:categories,id',
+            'tags' => 'nullable | exists:tags,id',
+            'image' => 'nullable | image | max:2048'
         ]);
         
-        if(array_key_exists("image", $validatedData)) {
-            $img_path = Storage::put("uploads", $validatedData["image"]);
-            $validatedData["image"] = $img_path;
+        if(array_key_exists('image', $validatedData)) {
+            $img_path = Storage::put('uploads', $validatedData['image']);
+            $validatedData['image'] = $img_path;
         }
 
         // Update post
