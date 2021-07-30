@@ -30,3 +30,8 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     Route::get('/', 'HomeController@index')->name('dashboard');
     route::resource('posts', PostController::class);
 });
+
+// Blog routes
+Route::get('blog', function () {
+    return view('blog');
+});
