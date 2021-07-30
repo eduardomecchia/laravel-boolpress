@@ -22,7 +22,8 @@
                 <div class="links">
                     <a href="/" class="mr-3">Home</a>
                     <a href="/posts" class="mr-3">Posts</a>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact" class="mr-3">Contact</a>
+                    <a href="/blog">Blog</a>
                 </div>
 
                 <div class="auth">

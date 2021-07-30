@@ -22,7 +22,8 @@
                 <div class="links">
                     <a href="/admin" class="mr-3">Dashboard</a>
                     <a href="/admin/posts" class="mr-3">Posts</a>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact" class="mr-3">Contact</a>
+                    <a href="/blog">Blog</a>
                 </div>
 
                 <div class="auth d-flex align-items-center">
