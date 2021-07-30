@@ -4,11 +4,14 @@
     <div class="container" id="app">
         <h1>Blog</h1>
 
-        <div class="card text-left" v-for="post in posts">
-            <img class="card-img-top" src="holder.js/100px180/" alt="">
-            <div class="card-body">
-                <h4 class="card-title">@{{post.title}}</h4>
-                <p class="card-text">@{{post.body}}</p>
+        <div class="posts container d-flex flex-wrap">
+            <div class="card text-left mb-3 p-4" v-for="post in posts">
+                <img class="img-fluid rounded" :src="post.image ? 'storage/' + post.image : '/img/placeholder.png'" width="200" alt="">
+                <div class="card-body p-0 mt-4">
+                    <h4 class="card-title">@{{ post.title }}</h4>
+                    <span>@{{ post.author }}</span>
+                    <p class="card-text">@{{ post.body }}</p>
+                </div>
             </div>
         </div>
     </div>
