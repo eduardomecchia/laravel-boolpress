@@ -11,8 +11,8 @@
                 <div class="card-body p-0 mt-4">
                     <h4 class="card-title">@{{ post.title }}</h4>
                     
-                    <span>@{{ post.author }}</span>
-                    
+                    <span class="font-weight-bold">@{{ post.author }}</span>
+
                     <div>@{{ post.category ? post.category.name : "No category available" }}</div>
 
                     <div class="tags d-flex flex-wrap my-3">
