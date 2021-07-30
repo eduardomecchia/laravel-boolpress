@@ -17,7 +17,7 @@
                     <span class="font-weight-bold">@{{ post.author }}</span>
 
                     <!-- Post category -->
-                    <div>@{{ post.category ? post.category.name : "No category available" }}</div>
+                    <div>Category: @{{ post.category ? post.category.name : "No category available" }}</div>
 
                     <!-- Post tags -->
                     <div class="tags d-flex flex-wrap my-3">
