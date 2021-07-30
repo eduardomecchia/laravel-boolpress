@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" id="app">
-        <h1>Blog</h1>
+        <h1 class="font-weight-bold">Blog</h1>
 
         <div class="posts container d-flex flex-wrap">
             <div class="card text-left mb-3 p-4" v-for="post in posts">
