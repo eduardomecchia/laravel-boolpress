@@ -14,7 +14,11 @@ class AddApiTokenToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->string('api_token', 80)
+            ->nullable()
+            ->unique()
+            ->after('password')
+            ->default(null);
         });
     }
 
@@ -26,7 +30,7 @@ class AddApiTokenToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropIfExists('api_token');
         });
     }
 }
