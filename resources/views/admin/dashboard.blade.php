@@ -24,15 +24,18 @@
                     <div class="card-body">
                         <dt>Username</dt>
                         <dd>{{ Auth::user()->name }}</dd>
-                        <dt>API Token</dt>
-        
+                        
                         @if(Auth::user()->api_token)
-                            {{ Auth::user()->api_token}}
+                            <dt>API Token</dt>
+                            <div class="form-group">
+                                <input class="form-control" type="password" value="{{ Auth::user()->api_token}}">
+                                <small>The token is hidden for security reasons. If you can't remember it, click regenerate to request a new token</small>
+                            </div>
                         @endif
         
-                        <form action="{{route('admin.api-token')}}" method="POST">
+                        <form action="{{ route('admin.api-token') }}" method="post">
                             @csrf
-                            <button class="btn btn-primary mt-3" type="submit">Generate Token</button>
+                            <button class="btn btn-outline-primary" type="submit"> @if(!Auth::user()->api_token) Generate @else Re-generate @endif Token</button>
                         </form>
                     </div>
                 </div>
