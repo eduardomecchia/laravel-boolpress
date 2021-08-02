@@ -19,6 +19,23 @@
                         {{ __('You are logged in!') }}
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <dt>Username</dt>
+                        <dd>{{ Auth::user()->name }}</dd>
+                        <dt>API Token</dt>
+        
+                        @if(Auth::user()->api_token)
+                            {{ Auth::user()->api_token}}
+                        @endif
+        
+                        <form action="{{route('admin.api-token')}}" method="POST">
+                            @csrf
+                            <button class="btn btn-primary mt-3" type="submit">Generate Token</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
