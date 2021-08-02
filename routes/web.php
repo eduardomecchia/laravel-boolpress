@@ -29,6 +29,9 @@ Route::get('posts/{post}', "PostController@show")->name("posts.show");
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
     route::resource('posts', PostController::class);
+
+    // API Token generation
+    Route::post('api-token', 'ApiTokenController@update')->name('api-token');
 });
 
 // Blog routes
