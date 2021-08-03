@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" id="app">
+    <div class="container">
         <h1 class="font-weight-bold">Blog</h1>
 
         <div class="posts container d-flex flex-wrap">
